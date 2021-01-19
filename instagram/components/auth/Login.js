@@ -1,35 +1,29 @@
 import React, { Component } from 'react';
 import { Button, TextInput, View } from 'react-native';
  
-export class Register extends Component {
+export class Login extends Component {
     constructor(props){
         super(props);
 
         this.state = {
             email: '',
-            password: '',
-            name: ''
+            password: ''
         }
 
-        this.onSignUp = this.onSignUp.bind(this)
+        this.onLogIn = this.onLogIn.bind(this)
     }
 
-    onSignUp(){
+    onLogIn(){
         const { email, password, name } = this.state;
-        // TODO: Call BE Register POST API here
+        // TODO: Call BE Auth API here
 
-        console.log("Registered!");
+        console.log("Log in successfully!");
     }
 
 
     render() {
         return (
             <View>
-                <TextInput
-                    placeholder = "name" 
-                    onChangeText = {(name) => this.setState({ name: name })}  
-                />
-
                 <TextInput
                     placeholder = "email" 
                     onChangeText = {(email) => this.setState({ email })}  
@@ -42,12 +36,12 @@ export class Register extends Component {
                 />
 
                 <Button 
-                    onPress = { () => this.onSignUp()}
-                    title = "Sign Up"
+                    onPress = { () => this.onLogIn()}
+                    title = "Sign In"
                 />
             </View>
         )
     }
 }
 
-export default Register
+export default Login
